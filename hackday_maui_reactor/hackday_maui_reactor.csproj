@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+    <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+    <!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
+    <OutputType>Exe</OutputType>
+    <RootNamespace>hackday_maui_reactor</RootNamespace>
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
+    <!-- Display name -->
+    <ApplicationTitle>hackday_maui_reactor</ApplicationTitle>
+    <!-- App Identifier -->
+    <ApplicationId>com.companyname.hackday_maui_reactor</ApplicationId>
+    <ApplicationIdGuid>25f39401-8c74-4bc9-abeb-61c13bdb1fd7</ApplicationIdGuid>
+    <!-- Versions -->
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <ApplicationVersion>1</ApplicationVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+    <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- App Icon -->
+    <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+    <!-- Splash Screen -->
+    <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+    <!-- Images -->
+    <MauiImage Include="Resources\Images\*" />
+    <MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+    <!-- Custom Fonts -->
+    <MauiFont Include="Resources\Fonts\*" />
+    <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+    <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\Images\account.svg" />
+    <None Remove="Resources\Images\account_selected.svg" />
+    <None Remove="Resources\Images\back.png" />
+    <None Remove="Resources\Images\barcode_scanner.svg" />
+    <None Remove="Resources\Images\brands.svg" />
+    <None Remove="Resources\Images\brand_logo.svg" />
+    <None Remove="Resources\Images\cart_icon.svg" />
+    <None Remove="Resources\Images\cart_populated.svg" />
+    <None Remove="Resources\Images\cart_populated_selected.svg" />
+    <None Remove="Resources\Images\cart_unpopulated.svg" />
+    <None Remove="Resources\Images\cart_unpopulated_selected.svg" />
+    <None Remove="Resources\Images\cart_unpopulated_selected_white.svg" />
+    <None Remove="Resources\Images\close.svg" />
+    <None Remove="Resources\Images\create_order.svg" />
+    <None Remove="Resources\Images\filter.svg" />
+    <None Remove="Resources\Images\flash.svg" />
+    <None Remove="Resources\Images\full_screen.svg" />
+    <None Remove="Resources\Images\help.png" />
+    <None Remove="Resources\Images\hung_tong.png" />
+    <None Remove="Resources\Images\iconblank.svg" />
+    <None Remove="Resources\Images\icondrawing.svg" />
+    <None Remove="Resources\Images\iconlistdetail.svg" />
+    <None Remove="Resources\Images\iconsample.svg" />
+    <None Remove="Resources\Images\iconwebview.svg" />
+    <None Remove="Resources\Images\icon_account.png" />
+    <None Remove="Resources\Images\icon_add.svg" />
+    <None Remove="Resources\Images\icon_barcode.png" />
+    <None Remove="Resources\Images\icon_change_customer.svg" />
+    <None Remove="Resources\Images\icon_list.svg" />
+    <None Remove="Resources\Images\icon_location_finder.svg" />
+    <None Remove="Resources\Images\icon_orders.svg" />
+    <None Remove="Resources\Images\icon_overflow.svg" />
+    <None Remove="Resources\Images\icon_right_arrow.png" />
+    <None Remove="Resources\Images\icon_search.png" />
+    <None Remove="Resources\Images\icon_search_history.svg" />
+    <None Remove="Resources\Images\icon_search_noresults.png" />
+    <None Remove="Resources\Images\icon_settings.png" />
+    <None Remove="Resources\Images\icon_sign_out.svg" />
+    <None Remove="Resources\Images\icon_trash.png" />
+    <None Remove="Resources\Images\icon_trash_white.svg" />
+    <None Remove="Resources\Images\icon_warning.svg" />
+    <None Remove="Resources\Images\ic_right_arrow_black.png" />
+    <None Remove="Resources\Images\info.png" />
+    <None Remove="Resources\Images\invoice.svg" />
+    <None Remove="Resources\Images\launch_screen_background.png" />
+    <None Remove="Resources\Images\location_button.svg" />
+    <None Remove="Resources\Images\location_finder_no_result.svg" />
+    <None Remove="Resources\Images\logo.png" />
+    <None Remove="Resources\Images\no_flash.svg" />
+    <None Remove="Resources\Images\no_image.svg" />
+    <None Remove="Resources\Images\no_image_with_white_border.svg" />
+    <None Remove="Resources\Images\overflow.svg" />
+    <None Remove="Resources\Images\quickorder.svg" />
+    <None Remove="Resources\Images\random.png" />
+    <None Remove="Resources\Images\saved_orders_icon.svg" />
+    <None Remove="Resources\Images\saved_payments.svg" />
+    <None Remove="Resources\Images\scanner.svg" />
+    <None Remove="Resources\Images\search.svg" />
+    <None Remove="Resources\Images\search_action.svg" />
+    <None Remove="Resources\Images\search_selected.svg" />
+    <None Remove="Resources\Images\settings.svg" />
+    <None Remove="Resources\Images\shop.svg" />
+    <None Remove="Resources\Images\shopcategories.svg" />
+    <None Remove="Resources\Images\shop_selected.svg" />
+    <None Remove="Resources\Images\sort.svg" />
+    <None Remove="Resources\Images\unavailable_cloud.svg" />
+    <None Remove="Resources\Images\unavailable_offline_cloud.png" />
+    <None Remove="Resources\Images\view_on_website.svg" />
+    <None Remove="Resources\Images\vmi.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Reactor.Maui" Version="1.0.108" />
+    <PackageReference Include="Reactor.Maui.Canvas" Version="1.0.108" />
+  </ItemGroup>
+</Project>
